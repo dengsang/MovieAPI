@@ -1,10 +1,12 @@
-package com.movie.movie.MovieService;
+package com.movie.movie.movie;
+
 
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Setter;
-import org.jakubd.moviedb.user.User;
+import com.movie.movie.user.User;
+
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -13,7 +15,7 @@ import java.util.UUID;
 
 @Data
 @Entity
-@Table(name = "MOVIE")
+@Table(name = "MOVIEDB")
 @EqualsAndHashCode(of = "id")
 
 public class Movie {
