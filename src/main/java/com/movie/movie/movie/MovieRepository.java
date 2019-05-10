@@ -1,4 +1,4 @@
-package com.movie.movie.MovieService;
+package com.movie.movie.movie;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
