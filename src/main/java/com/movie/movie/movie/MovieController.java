@@ -1,4 +1,4 @@
-package com.movie.movie.MovieService;
+package com.movie.movie.movie;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,12 +17,12 @@ public class MovieController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    MovieDto create(@Valid @RequestBody MovieDto dto) {
+    MovieDto addEntries(@Valid @RequestBody MovieDto dto) {
         return movieService.create(dto);
     }
 
     @PutMapping("/{id}")
-    MovieDto update(@PathVariable("id") String id, @Valid @RequestBody MovieDto dto) {
+    MovieDto edit(@PathVariable("id") String id, @Valid @RequestBody MovieDto dto) {
         return movieService.update(id, dto);
     }
 
