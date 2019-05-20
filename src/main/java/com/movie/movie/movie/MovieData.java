@@ -1,4 +1,4 @@
-package com.movie.movie.MovieService;
+package com.movie.movie.movie;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -18,6 +18,12 @@ public class MovieDto {
     @Length(min = 1, max = 500)
     private String description;
 
+    private String recommendation;
+
+    private  int ratings;
+
     private boolean watched;
+
+
 
 }
