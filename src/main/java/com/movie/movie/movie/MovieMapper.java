@@ -6,25 +6,27 @@ import org.springframework.stereotype.Component;
 @Component
 public class MovieMapper {
 
-    MovieDto map(Movie movie) {
-        MovieDto dto = new MovieDto();
-        dto.setId(movie.getId());
-        dto.setTitle(movie.getTitle());
-        dto.setDescription(movie.getDescription());
-        dto.setWatched(movie.isWatched());
-        return dto;
+    MovieData map(Movie movie) {
+        MovieData data = new MovieData ();
+        data.setId(movie.getId());
+        data.setTitle(movie.getTitle());
+        data.setDescription(movie.getDescription());
+        data.setRatings(movie.getRatings ());
+        data.setRecommendation (movie.getRecommendation());
+        data.setWatched(movie.isWatched());
+        return data;
     }
 
-    Movie map(MovieDto dto) {
+    Movie map(MovieData data) {
         Movie movie;
-        if (dto.getId() != null) {
-            movie = new Movie(dto.getId());
+        if (data.getId() != null) {
+            movie = new Movie(data.getId());
         } else {
             movie = new Movie();
         }
-        movie.setTitle(dto.getTitle());
-        movie.setDescription(dto.getDescription());
-        movie.setWatched(dto.isWatched());
+        movie.setTitle(data.getTitle());
+        movie.setDescription(data.getDescription());
+        movie.setWatched(data.isWatched());
         return movie;
     }
 }
