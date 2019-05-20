@@ -11,4 +11,8 @@ public interface MovieRepository extends JpaRepository<Movie, String> {
     Optional<Movie> findById(String id);
 
     List<Movie> findByWatched(boolean watched);
+
+    //void delete(String id);
+
+    // void delete(String id);
 }
