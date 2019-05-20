@@ -15,24 +15,28 @@ public class MovieController {
 
     private final MovieService movieService;
 
+
+    // Adding movie entries
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    MovieDto addEntries(@Valid @RequestBody MovieDto dto) {
-        return movieService.create(dto);
+    MovieData create(@Valid @RequestBody MovieData data) {
+        return movieService.create(data);
     }
 
+    // Edit endpoint
     @PutMapping("/{id}")
-    MovieDto edit(@PathVariable("id") String id, @Valid @RequestBody MovieDto dto) {
-        return movieService.update(id, dto);
+    MovieData update(@PathVariable("id") String id, @Valid @RequestBody MovieData data) {
+        return movieService.update(id, data);
     }
 
     @GetMapping
-    List<MovieDto> findAll() {
+    List<MovieData> findAll() {
         return movieService.findAll();
     }
 
     @GetMapping(params = "watched")
-    List<MovieDto> findAll(@RequestParam("watched") boolean watched) {
+    List<MovieData> findAll(@RequestParam("watched") boolean watched) {
         return movieService.findWatched(watched);
     }
 
