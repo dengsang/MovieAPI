@@ -31,6 +31,12 @@ public class Movie {
     @Column(name = "DESCRIPTION", length = 500, nullable = false)
     private String description;
 
+    @Column(name = "RECOMMENDATION")
+    private String recommendation ;
+
+    @Column(name = "RATINGS", nullable = false)
+    private String ratings;
+
     @Column(name = "WATCHED")
     private boolean watched;
 
